@@ -9,7 +9,7 @@ import { useRouter } from 'next/navigation';
 import MeetingType from './meeting-type/page';
 
 function Dashboard() {
-  const { isAuthenticated, isLoading, user } = useKindeBrowserClient();
+  const { isLoading, user } = useKindeBrowserClient();
   
   // const [loading, setLoading] = useState(true)
 
@@ -42,14 +42,10 @@ function Dashboard() {
     if (isLoading) return <h2 className='flex items-center justify-center'>Loading...</h2>
 
 
-  return isAuthenticated? (
+  return (
     <div>
         {/* Dashboard <LogoutLink>Logout</LogoutLink> */}
         <MeetingType/>
-    </div>
-  ):(
-    <div className='flex flex-col text-xl items-center justify-center '>
-        You have to <LoginLink className='text-blue-500'> Log in </LoginLink> to see this page.
     </div>
   )
 }

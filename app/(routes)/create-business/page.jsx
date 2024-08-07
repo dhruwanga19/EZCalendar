@@ -30,7 +30,7 @@ function CreateBusiness() {
 
     if (isLoading) return <h2 className='flex items-center justify-center'>Loading...</h2>
 
-  return user ? (
+  return(
     <div className='p-14 items-center flex flex-col gap-20 my-10'>
         <Image src='/logo.svg' width={200} height={200} alt='logo'/>
         <div className='flex flex-col items-center gap-4 max-w-3xl'>
@@ -44,11 +44,8 @@ function CreateBusiness() {
             <Button className='w-full mt-4' onClick={onCreateBusiness} disabled={!businesName}>Create Business</Button>
         </div>
     </div>
-  ):(
-    <div className='flex flex-col text-xl items-center justify-center '>
-        You have to <LoginLink className='text-blue-500'> Log in </LoginLink> to see this page.
-    </div>
   )
+  
 }
 
 export default CreateBusiness
